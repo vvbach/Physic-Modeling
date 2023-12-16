@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Momentum Conservation Law</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="container" width="800px" height="300px"></canvas>
+  <div id="control_table">
+    <input type="button" id="run_button" value="Run">
+  </div>
+  <div id="setting_table">
+    <div id="mass1_label">Mass 1:</div>
+    <input type="number" id="mass1_number" class="mass_number" value="10">
+    <div id="mass2_label">Mass 2:</div>
+    <input type="number" id="mass2_number" class="mass_number" value="10">
+    <div id="elastic_label">Elastic:</div>
+    <input type="checkbox" id="elastic_check_box" checked> 
+    <div id="velocity1_label">Velocity 1:</div>
+    <input type="number" id="velocity1_number" class="velocity_number" value="5">
+    <div id="velocity2_label">Velocity 2:</div>
+    <input type="number" id="velocity2_number" class="velocity_number" value="-5">
+  </div>
+  <script src="js/Simulation.js"></script>
+  <script src="js/RestrictInput.js"></script>
+  <script src="js/RunSimulation.js"></script>
+</body>
+</html>
