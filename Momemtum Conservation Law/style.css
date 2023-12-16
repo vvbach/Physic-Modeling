@@ -23,71 +23,54 @@ div#setting_table{
     left: 50px;
 }
 
-div#mass1_label {
-    position: absolute;
-    top: 0px;
-    left: 0px;
+.object {
+    display: flex;
+}
+
+#object1 {
+    margin-bottom: 30px;
+}
+
+#object2 {
+    margin-bottom: 30px;
+}
+
+.object_label {
+    margin-left: 0px;
+}
+
+.mass_label {
+    margin-left: 40px;
+}
+
+.mass_input {
+    width: 70px;
+}
+
+.color_label {
+    margin-left: 40px;
+}
+
+.color_input {
+    width: 40px;
+    height: 20px;
+}
+
+.velocity_label {
+    margin-left: 60px;
+}
+
+.velocity_input {
     width: 100px;
 }
 
-input#mass1_number {
-    top: 0px;
-}
-
-div#mass2_label {
+#elastic_label {
     position: absolute;
-    top: 50px;
-    left: 0px;
-    width: 100px;
+    top: 105px;
 }
-
-input#mass2_number {
-    top: 50px;
-}
-
-input.mass_number {
+#elastic_check_box {
     position: absolute;
-    left: 120px;
-    width: 100px;
-}
-
-div#elastic_label {
-    position: absolute;
-    top: 100px;
-    left: 0px;
-    width: 100px;
-}
-
-input#elastic_check_box {
-    position: absolute;
-    top: 100px;
-    left: 115px;
-}
-
-div#velocity1_label{
-    position: absolute;
-    top: 0px;
-    left: 450px;
-    width: 100px;
-}
-
-div#velocity2_label{
-    position: absolute;
-    top: 50px;
-    left: 450px;
-    width: 100px;
-}
-
-input.velocity_number {
-    position: absolute;
-    left: 550px;
-    width: 100px;
-}
-
-input#velocity1_number {
-    top: 0px;
-}
-
-input#velocity2_number {
-    top: 50px;
+    left: 95px;
+    width: 20px;
+    height: 20px;
 }

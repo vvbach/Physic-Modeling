@@ -1,10 +1,13 @@
 var container = document.getElementById("container");
 var context = container.getContext("2d");
 
+var velocity1_input = document.getElementById("velocity1_input");
+var velocity2_input = document.getElementById("velocity2_input");
+
 class Body {
-    constructor(position, mass, color, velocity){
+    constructor(position, mass, velocity){
         this.position = position;
-        this.color = color;
+        this.color = 0;
         this.velocity = velocity;
         this.mass = mass;
         
@@ -22,8 +25,12 @@ class Body {
     }
 }
 
+function IsColliding(obj1, obj2){
+    return Math.abs(obj1.position - obj2.position) <= obj1.radius + obj2.radius;
+}
+
 function OnElasticCollisionWithObject(obj1, obj2){
-    if (obj1.position + obj1.radius >= obj2.position - obj2.radius){
+    if (IsColliding(obj1, obj2)){
         var v1 = obj1.velocity;
         var v2 = obj2.velocity;
         obj1.position =  obj2.position - obj2.radius - obj1.radius;
@@ -31,11 +38,11 @@ function OnElasticCollisionWithObject(obj1, obj2){
 
         obj1.velocity = (obj1.mass - obj2.mass) / (obj1.mass + obj2.mass) * v1 + (2 * obj2.mass) / (obj1.mass + obj2.mass) * v2;
         obj2.velocity = (2 * obj1.mass) / (obj1.mass + obj2.mass) * v1 + (obj2.mass - obj1.mass) / (obj1.mass + obj2.mass) * v2
-    }console.log(obj1.velocity, obj2.velocity);
+    }
 }
 
 function OnInelasticCollisionWithObject(obj1, obj2){
-    if (obj1.position + obj1.radius >= obj2.position - obj2.radius){
+    if (IsColliding(obj1, obj2)){
         var v1 = obj1.velocity;
         var v2 = obj2.velocity;
         obj1.position = obj2.position - obj2.radius - obj1.radius;
@@ -69,14 +76,19 @@ function OnInelasticCollisionWithWall(obj){
     }
 }
 
-const obj1 = new Body(150, 10, 'red', 0);
-const obj2 = new Body(650, 10, 'orange', 0);
+const obj1 = new Body(150, 10, 0);
+const obj2 = new Body(650, 10, 0);
 
 obj1.drawObject();
 obj2.drawObject();
 
 function updateScreen(){
     context.clearRect(0, 0, 800, 300);
+
+    
+    obj1.color = document.getElementById("color1_input").value;
+    obj2.color = document.getElementById("color2_input").value;
+
     obj1.drawObject();
     obj2.drawObject();
 
@@ -92,8 +104,10 @@ function updateScreen(){
             OnInelasticCollisionWithWall(obj1);
             OnInelasticCollisionWithWall(obj2);
         }
-        document.getElementById("velocity1_number").value = obj1.velocity.toFixed(2);
-        document.getElementById("velocity2_number").value = obj2.velocity.toFixed(2);
+
+        velocity1_input.value = obj1.velocity.toFixed(2);
+        velocity2_input.value = obj2.velocity.toFixed(2);
+        
     }
 }
 

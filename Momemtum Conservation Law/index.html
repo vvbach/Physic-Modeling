@@ -12,16 +12,42 @@
     <input type="button" id="run_button" value="Run">
   </div>
   <div id="setting_table">
-    <div id="mass1_label">Mass 1:</div>
-    <input type="number" id="mass1_number" class="mass_number" value="10">
-    <div id="mass2_label">Mass 2:</div>
-    <input type="number" id="mass2_number" class="mass_number" value="10">
-    <div id="elastic_label">Elastic:</div>
-    <input type="checkbox" id="elastic_check_box" checked> 
-    <div id="velocity1_label">Velocity 1:</div>
-    <input type="number" id="velocity1_number" class="velocity_number" value="5">
-    <div id="velocity2_label">Velocity 2:</div>
-    <input type="number" id="velocity2_number" class="velocity_number" value="-5">
+    <div id="object1" class="object">
+      <div id="object1_label" class="object_label">Object 1:</div>
+      <div id="mass1">
+        <label id="mass1_label" class="mass_label">Mass:</label>
+        <input type="number" id="mass1_input" class="mass_input" value="10">
+      </div>
+      <div id="color1">
+        <label id="color1_label" class="color_label">Color:</label>
+        <input type="color" id="color1_input" class="color_input" value="#ff0000">
+      </div>
+      <div id="velocity1">
+        <label id="velocity1_label" class="velocity_label">Velocity:</label>
+        <input type="number" id="velocity1_input" class="velocity_input" value="5">  
+      </div>
+    </div>
+    
+    <div id="object2" class="object">
+      <div id="object2_label" class="object_label">Object 2:</div>
+      <div id="mass2">
+        <label id="mass2_label" class="mass_label">Mass:</label>
+        <input type="number" id="mass2_input" class="mass_input" value="10">
+      </div>
+      <div id="color2">
+        <label id="color2_label" class="color_label">Color:</label>
+        <input type="color" id="color2_input" class="color_input" value="#0000ff">
+      </div>
+      <div id="velocity2">
+        <label id="velocity2_label" class="velocity_label">Velocity:</label>
+        <input type="number" id="velocity2_input" class="velocity_input" value="-5">  
+      </div>
+    </div> 
+    
+    <div id="elastic">
+      <div id="elastic_label">Elastic:</div>
+      <input type="checkbox" id="elastic_check_box" checked> 
+    </div>
   </div>
   <script src="js/Simulation.js"></script>
   <script src="js/RestrictInput.js"></script>
