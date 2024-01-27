@@ -13,5 +13,5 @@ function RestrictInput(e, obj){
     obj.mass = parseInt(e.target.value);
 }
 
-document.getElementById("mass1_number").addEventListener("input", e => RestrictInput(e, obj1));;
-document.getElementById("mass2_number").addEventListener("input", e => RestrictInput(e, obj2));
+document.getElementById("mass1_input").addEventListener("input", e => RestrictInput(e, obj1));;
+document.getElementById("mass2_input").addEventListener("input", e => RestrictInput(e, obj2));
